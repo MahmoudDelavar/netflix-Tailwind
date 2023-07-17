@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { getSession, useSession } from 'next-auth/react';
 import Login from '../components/auth/login';
-import Navbar from '../components/layer/navbar';
+
 import {
   getActionMovie,
   getComedyMovie,
@@ -12,11 +12,12 @@ import {
   getTopRate,
   getTrendig,
 } from '../utils/requests/fetchers';
+import Hero from '../components/hero';
 
 //=====================================================
 export default function Home({
   posters,
-  // trends,
+  trends,
   actionMovies,
   topRate,
   comedyMovie,
@@ -36,8 +37,8 @@ export default function Home({
         <link rel='icon' href='/logo.png' />
       </Head>
 
-      <main>
-        <Navbar />
+      <main className='relative bg-gradient-to-b from-gray-900/10 to-[#010511]'>
+        <Hero moviePosters={posters} />
       </main>
     </>
   );

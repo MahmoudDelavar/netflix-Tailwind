@@ -5,6 +5,7 @@ const api_key = process.env.NEXT_PUBLIC_API_KEY;
 axios.defaults.params = {
   api_key,
 };
+//==========================================
 export const getMoviePosters = async () => {
   const { data } = await axios.get(urls.movePoster);
   return data;
