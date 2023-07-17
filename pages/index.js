@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import { getSession, useSession } from 'next-auth/react';
 import Login from '../components/auth/login';
+import Navbar from '../components/layer/navbar';
 //=====================================================
 export default function Home() {
   const { data: session } = useSession();
 
-  if (!session) return <Login />;
+  // if (!session) return <Login />;
 
   return (
     <>
@@ -16,7 +17,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className='text-3xl font-bold underline'>clone-netflix</h1>
+        <Navbar />
       </main>
     </>
   );
