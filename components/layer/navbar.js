@@ -36,6 +36,8 @@ const Navbar = () => {
             height={30}
             className='cursor-pointer rounded w-auto h-auto'
             onClick={() => signOut()}
+            alt='logo'
+            priority
           />
         </div>
       </div>

@@ -2,8 +2,28 @@ import Head from 'next/head';
 import { getSession, useSession } from 'next-auth/react';
 import Login from '../components/auth/login';
 import Navbar from '../components/layer/navbar';
+import {
+  getActionMovie,
+  getComedyMovie,
+  getDocumentariesMovie,
+  getHorrorMovie,
+  getMoviePosters,
+  getRomanceMovie,
+  getTopRate,
+  getTrendig,
+} from '../utils/requests/fetchers';
+
 //=====================================================
-export default function Home() {
+export default function Home({
+  posters,
+  // trends,
+  actionMovies,
+  topRate,
+  comedyMovie,
+  horrorMovies,
+  fomanceMovie,
+  documentariesMovie,
+}) {
   const { data: session } = useSession();
 
   // if (!session) return <Login />;
@@ -25,9 +45,26 @@ export default function Home() {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
+  const posters = await getMoviePosters();
+  const trends = await getTrendig();
+  const topRate = await getTopRate();
+  const actionMovies = await getActionMovie();
+  const comedyMovie = await getComedyMovie();
+  const horrorMovies = await getHorrorMovie();
+  const fomanceMovie = await getRomanceMovie();
+  const documentariesMovie = await getDocumentariesMovie();
+
   return {
     props: {
       session,
+      posters,
+      trends,
+      actionMovies,
+      topRate,
+      comedyMovie,
+      horrorMovies,
+      fomanceMovie,
+      documentariesMovie,
     },
   };
 }
