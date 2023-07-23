@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Navbar from '../layer/navbar';
+import Navbar from '../layout/navbar';
 import { baseUrl } from '../../utils/constant';
 import { imageBaseUrl } from '../../utils/constant';
 import { FaPlay } from 'react-icons/fa';

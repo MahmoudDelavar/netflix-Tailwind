@@ -13,6 +13,7 @@ import {
   getTrendig,
 } from '../utils/requests/fetchers';
 import Hero from '../components/hero';
+import MovieCollection from '../components/movie-collection';
 
 //=====================================================
 export default function Home({
@@ -37,8 +38,9 @@ export default function Home({
         <link rel='icon' href='/logo.png' />
       </Head>
 
-      <main className='relative bg-gradient-to-b from-gray-900/10 to-[#010511]'>
+      <main className='relative bg-gradient-to-b from-gray-900/10 to-[#010511] space-x-3'>
         <Hero moviePosters={posters} />
+        <MovieCollection title={'action'} />
       </main>
     </>
   );
