@@ -3,6 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    remotePatterns: [{ hostname: 'image.tmdb.org' }],
+
     domains: ['api.themoviedb.org'],
   },
 };

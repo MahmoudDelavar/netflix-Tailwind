@@ -20,11 +20,11 @@ export default function Home({
   posters,
   trends,
   actionMovies,
-  topRate,
-  comedyMovie,
+  topRated,
+  comedyMovies,
   horrorMovies,
-  fomanceMovie,
-  documentariesMovie,
+  romanceMovie,
+  documentaries,
 }) {
   const { data: session } = useSession();
 
@@ -40,7 +40,16 @@ export default function Home({
 
       <main className='relative bg-gradient-to-b from-gray-900/10 to-[#010511] space-x-3'>
         <Hero moviePosters={posters} />
-        <MovieCollection title={'action'} />
+
+        <section className='container pb-32'>
+          <MovieCollection title='Trending Now' movies={trends} />
+          <MovieCollection title='Top Rated' movies={topRated} />
+          <MovieCollection title='Action Thrillers' movies={actionMovies} />
+          <MovieCollection title='Comedies' movies={comedyMovies} />
+          <MovieCollection title='Scary Movies' movies={horrorMovies} />
+          <MovieCollection title='Romance Movies' movies={romanceMovie} />
+          <MovieCollection title='Documentaries' movies={documentaries} />
+        </section>
       </main>
     </>
   );
@@ -50,12 +59,12 @@ export async function getServerSideProps(context) {
   const session = await getSession(context);
   const posters = await getMoviePosters();
   const trends = await getTrendig();
-  const topRate = await getTopRate();
+  const topRated = await getTopRate();
   const actionMovies = await getActionMovie();
-  const comedyMovie = await getComedyMovie();
+  const comedyMovies = await getComedyMovie();
   const horrorMovies = await getHorrorMovie();
-  const fomanceMovie = await getRomanceMovie();
-  const documentariesMovie = await getDocumentariesMovie();
+  const romanceMovie = await getRomanceMovie();
+  const documentaries = await getDocumentariesMovie();
 
   return {
     props: {
@@ -63,11 +72,11 @@ export async function getServerSideProps(context) {
       posters,
       trends,
       actionMovies,
-      topRate,
-      comedyMovie,
+      topRated,
+      comedyMovies,
       horrorMovies,
-      fomanceMovie,
-      documentariesMovie,
+      romanceMovie,
+      documentaries,
     },
   };
 }
