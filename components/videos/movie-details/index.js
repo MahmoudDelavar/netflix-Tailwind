@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Navbar from '../layout/navbar';
-import { baseUrl } from '../../utils/constant';
-import { imageBaseUrl } from '../../utils/constant';
+import Navbar from '../../layout/navbar';
+
 import { FaPlay } from 'react-icons/fa';
 import { IoIosInformationCircle } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
 import dynamic from 'next/dynamic';
+import { imageBaseUrl } from '../../../utils/constant';
 const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   ssr: false,
 });

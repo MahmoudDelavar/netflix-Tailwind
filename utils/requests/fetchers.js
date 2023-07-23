@@ -21,6 +21,16 @@ export const getTrailer = async (movie_id) => {
   return results;
 };
 
+export const getMovieById = async (id) => {
+  const { data } = await axios.get(urls.videoById(id), {
+    params: {
+      language: 'en-US',
+      append_to_response: 'videos',
+    },
+  });
+  return data;
+};
+
 export const getMoviePosters = async () => {
   const { data } = await axios.get(urls.movePoster);
   return data;

@@ -12,8 +12,8 @@ import {
   getTopRate,
   getTrendig,
 } from '../utils/requests/fetchers';
-import Hero from '../components/hero';
-import MovieCollection from '../components/movie-collection';
+
+import LandingPage from '../components/videos';
 
 //=====================================================
 export default function Home({
@@ -39,17 +39,16 @@ export default function Home({
       </Head>
 
       <main className='relative bg-gradient-to-b from-gray-900/10 to-[#010511] space-x-3'>
-        <Hero moviePosters={posters} />
-
-        <section className='container pb-32'>
-          <MovieCollection title='Trending Now' movies={trends} />
-          <MovieCollection title='Top Rated' movies={topRated} />
-          <MovieCollection title='Action Thrillers' movies={actionMovies} />
-          <MovieCollection title='Comedies' movies={comedyMovies} />
-          <MovieCollection title='Scary Movies' movies={horrorMovies} />
-          <MovieCollection title='Romance Movies' movies={romanceMovie} />
-          <MovieCollection title='Documentaries' movies={documentaries} />
-        </section>
+        <LandingPage
+          posters={posters}
+          trends={trends}
+          topRated={topRated}
+          actionMovies={actionMovies}
+          comedyMovies={comedyMovies}
+          horrorMovies={horrorMovies}
+          romanceMovie={romanceMovie}
+          documentaries={documentaries}
+        />
       </main>
     </>
   );

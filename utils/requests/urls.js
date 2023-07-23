@@ -1,6 +1,7 @@
 import { baseUrl } from '../constant';
 
 export const urls = {
+  videoById: (id) => baseUrl + `/movie/${id}`,
   treandig: baseUrl + '/trending/all/week',
   movePoster: baseUrl + `/discover/movie`,
   topRate: baseUrl + '/movie/top_rated',

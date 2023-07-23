@@ -1,7 +1,7 @@
 import { useEffect, useState, version } from 'react';
 import MovieDetails from '../movie-details';
-import { getTrailer } from '../../utils/requests/fetchers';
-import { youtubeUrl } from '../../utils/constant';
+import { getTrailer } from '../../../utils/requests/fetchers';
+import { youtubeUrl } from '../../../utils/constant';
 //==============================================
 
 const Hero = ({ moviePosters }) => {

@@ -1,6 +1,6 @@
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
-import Thumbnail from '../utils/thumbnail';
 import { useRef } from 'react';
+import Thumbnail from '../../../utils/common/thumbnail';
 //============================================================
 const MovieCollection = ({ title, movies }) => {
   const ref = useRef(null);
