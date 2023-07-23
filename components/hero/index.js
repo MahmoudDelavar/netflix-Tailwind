@@ -1,13 +1,13 @@
 import { useEffect, useState, version } from 'react';
 import MovieDetails from '../movie-details';
 import { getTrailer } from '../../utils/requests/fetchers';
-
+import { youtubeUrl } from '../../utils/constant';
 //==============================================
+
 const Hero = ({ moviePosters }) => {
   const [movie, setMovie] = useState();
   const [TrailerUrl, setTrailerUrl] = useState('');
   const [showPlayer, setShowPlayer] = useState();
-  //   console.log('moviePosters', moviePosters);
 
   useEffect(() => {
     // choose a randome movie to show on the home page
@@ -22,9 +22,8 @@ const Hero = ({ moviePosters }) => {
       const trailerIndex = results.findIndex(
         (element) => element.type === 'Trailer'
       );
-      const trailerURL = `https://www.youtube.com/watch?v=${results[trailerIndex]?.key}`;
+      const trailerURL = `${youtubeUrl}${results[trailerIndex]?.key}`;
       setTrailerUrl(trailerURL);
-      console.log('trailerURL', trailerURL);
     })();
   }, [moviePosters]);
 

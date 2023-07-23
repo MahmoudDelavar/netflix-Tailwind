@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BiSearch } from 'react-icons/bi';
 import { BsBellFill } from 'react-icons/bs';
-
+//============================================
 const Navbar = () => {
   return (
     <nav>

@@ -17,6 +17,7 @@ const MovieDetails = ({ movie, showPlayer, setShowPlayer, trailerURL }) => {
       <Navbar />
       <div className='container'>
         <div className='flex flex-col space-y-2 py-16 md:space-y-4 h-[100vh] justify-center lg:pb-12'>
+          {/*------------- poster set to background------------- */}
           <div className='absolute top-0 left-0 -z-10 h-screen w-screen'>
             {/* <Image
               fill
@@ -33,13 +34,17 @@ const MovieDetails = ({ movie, showPlayer, setShowPlayer, trailerURL }) => {
             />
           </div>
 
+          {/*------------- title of random movie------------- */}
           <h1 className='text-2xl font-bold md:text-4xl lg:text-7xl'>
             {movie?.title || movie?.name || movie?.original_name}
           </h1>
+
+          {/*---------- discription of random movie---------- */}
           <p className='max-w-xs text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>
             {movie?.overview}
           </p>
 
+          {/*------------ play and more info btn ------------ */}
           <div className='flex space-x-3'>
             <button
               className='bannerButton bg-white text-black'
@@ -58,6 +63,7 @@ const MovieDetails = ({ movie, showPlayer, setShowPlayer, trailerURL }) => {
           </div>
         </div>
 
+        {/*----------- video player and close btn----------- */}
         <div
           className={`absolute top-3 inset-x-[7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${
             showPlayer ? 'opacity-100 z-50' : 'opacity-0 -z-10'
@@ -72,6 +78,7 @@ const MovieDetails = ({ movie, showPlayer, setShowPlayer, trailerURL }) => {
               <AiOutlineClose className='h-5' />
             </div>
           </div>
+
           <div className='relative pt-[56.25%]'>
             <ReactPlayer
               url={trailerURL}
