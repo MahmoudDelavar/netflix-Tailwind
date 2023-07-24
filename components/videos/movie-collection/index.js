@@ -1,6 +1,6 @@
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { useRef } from 'react';
-import Thumbnail from '../../../utils/common/thumbnail';
+import Thumbnail from '../../common/thumbnail';
 //============================================================
 const MovieCollection = ({ title, movies }) => {
   const ref = useRef(null);
@@ -18,9 +18,9 @@ const MovieCollection = ({ title, movies }) => {
   };
 
   return (
-    <div className=' space-y-6 md:space-y-2 '>
+    <div className='mt-6 md:mb-y-2'>
       {/*------------- row title------------- */}
-      <h2 className='w-56 cursor-pointer text-md text-[#e5e5e5]  transition duration-200 hover:text-white md:text-2xl'>
+      <h2 className='w-56 cursor-pointer text-md text-[#e5e5e5]  transition duration-200 hover:text-white md:text-2xl '>
         {title}
       </h2>
 
@@ -36,7 +36,7 @@ const MovieCollection = ({ title, movies }) => {
         {/*----------- thumbnail list----------- */}
         <div
           ref={ref}
-          className='flex items-center space-x-0.5  scrollbar-hide overflow-x-scroll md:space-x-2.5 md:p-2'
+          className='flex items-center space-x-0.5   scrollbar-hide overflow-x-scroll md:space-x-2.5 md:p-2'
         >
           {movies.results?.map((movie, index) => (
             <Thumbnail movie={movie} key={index} />

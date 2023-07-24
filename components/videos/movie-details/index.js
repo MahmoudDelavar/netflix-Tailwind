@@ -12,16 +12,22 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), {
 
 //=================================================
 const MovieDetails = ({ movie, showPlayer, setShowPlayer, trailerURL }) => {
+  console.log(
+    'url',
+    `${imageBaseUrl}${movie?.backdrop_path || movie?.poster_path}`
+  );
   return (
     <>
       <Navbar />
-      <div className='container'>
-        <div className='flex flex-col space-y-2 py-16 md:space-y-4 h-[100vh] justify-center lg:pb-12'>
+      <div className=' h-auto'>
+        <div className='flex flex-col h-auto justify-center'>
           {/*------------- poster set to background------------- */}
-          <div className='absolute top-0 left-0 -z-10 h-screen w-screen'>
+          <div className='relative top-0 left-0 -z-10 '>
             {/* <Image
               fill
-              src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
+              src={`${imageBaseUrl}${
+                movie?.backdrop_path || movie?.poster_path
+              }`}
               className='object-cover'
               alt='movie poster'
             /> */}
@@ -32,34 +38,36 @@ const MovieDetails = ({ movie, showPlayer, setShowPlayer, trailerURL }) => {
               }`}
               alt='poster'
             />
-          </div>
 
-          {/*------------- title of random movie------------- */}
-          <h1 className='text-2xl font-bold md:text-4xl lg:text-7xl'>
-            {movie?.title || movie?.name || movie?.original_name}
-          </h1>
+            <div className='relative  sm:absolute text-white bottom-0 px-2 '>
+              {/*------------- title of random movie------------- */}
+              <h1 className='text-xl font-bold md:text-4xl lg:text-7xl'>
+                {movie?.title || movie?.name || movie?.original_name}
+              </h1>
 
-          {/*---------- discription of random movie---------- */}
-          <p className='max-w-xs text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>
-            {movie?.overview}
-          </p>
+              {/*---------- discription of random movie---------- */}
+              <p className='max-w-xs text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>
+                {movie?.overview}
+              </p>
 
-          {/*------------ play and more info btn ------------ */}
-          <div className='flex space-x-3'>
-            <button
-              className='bannerButton bg-white text-black'
-              onClick={() => {
-                setShowPlayer(true);
-              }}
-            >
-              <FaPlay className='h-4 w-4 text-black md:h-7 md:w-7' />
-              Play
-            </button>
+              {/*------------ play and more info btn ------------ */}
+              <div className='flex space-x-3'>
+                <button
+                  className='bannerButton bg-white text-black'
+                  onClick={() => {
+                    setShowPlayer(true);
+                  }}
+                >
+                  <FaPlay className='h-4 w-4 text-black md:h-7 md:w-7' />
+                  Play
+                </button>
 
-            <button className='bannerButton bg-[gray]/70'>
-              <IoIosInformationCircle className='h-5 w-5 md:h-8 md:w-8' />
-              More Info
-            </button>
+                <button className='bannerButton bg-[gray]/70'>
+                  <IoIosInformationCircle className='h-5 w-5 md:h-8 md:w-8' />
+                  More Info
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 

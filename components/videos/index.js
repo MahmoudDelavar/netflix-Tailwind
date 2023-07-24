@@ -15,13 +15,13 @@ const LandingPage = ({
     <>
       <Hero moviePosters={posters} />
 
-      <section className='container pb-32'>
+      <section className='pb-32'>
         <MovieCollection title='Trending Now' movies={trends} />
         <MovieCollection title='Top Rated' movies={topRated} />
         <MovieCollection title='Action Thrillers' movies={actionMovies} />
         <MovieCollection title='Comedies' movies={comedyMovies} />
         <MovieCollection title='Scary Movies' movies={horrorMovies} />
-        <MovieCollection title='Romance Movies' movies={romanceMovie} />
+        {/* <MovieCollection title='Romance Movies' movies={romanceMovie} /> */}
         <MovieCollection title='Documentaries' movies={documentaries} />
       </section>
     </>
